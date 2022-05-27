@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "980e4711-44e6-42a5-80f9-4382f93e5698",
+		"name": "StoreManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddAllStores",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"storeName\": \"Zara\",\r\n    \"phone\": 8797374895,\r\n    \"email\": \"zara@gmail.com\",\r\n    \"addresses\": [\r\n        {\r\n            \"id\": 1,\r\n            \"addressLine1\": \"25th Main\",\r\n            \"addressLine2\": \"Baker Street\",\r\n            \"state\": \"karnataka\",\r\n            \"country\": \"India\",\r\n            \"pinCode\": 833212\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8989/api/StoreDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"StoreDetails"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"storeName\": \"Zara\",\r\n    \"phone\": 8797374895,\r\n    \"email\": \"zara@gmail.com\",\r\n    \"addresses\": [\r\n        {\r\n            \"id\": 1,\r\n            \"addressLine1\": \"25th Main\",\r\n            \"addressLine2\": \"Baker Street\",\r\n            \"state\": \"karnataka\",\r\n            \"country\": \"India\",\r\n            \"pinCode\": 833212\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8989/api/StoreDetails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"api",
+								"StoreDetails"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 27 May 2022 09:45:36 GMT"
+						},
+						{
+							"key": "content-length",
+							"value": "31"
+						}
+					],
+					"cookie": [],
+					"body": "StoreDetails Added Successfully"
+				}
+			]
+		},
+		{
+			"name": "GetAllStoreDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8989/api/StoreDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"api",
+						"StoreDetails"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetAllStoreDetails",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8989/api/StoreDetails",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"api",
+								"StoreDetails"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 27 May 2022 09:46:31 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"62909dc08cbaf363d297e18e\",\n        \"storeName\": \"Zara\",\n        \"phone\": 8797374895,\n        \"email\": \"zara@gmail.com\",\n        \"addresses\": [\n            {\n                \"id\": 1,\n                \"addressLine1\": \"25th Main\",\n                \"addressLine2\": \"Baker Street\",\n                \"state\": \"karnataka\",\n                \"country\": \"India\",\n                \"pinCode\": 833212\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GetStoreDetailsById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": [
+				{
+					"name": "GetStoreDetailsById",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8989/api/StoreDetails/62909dc08cbaf363d297e18e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"api",
+								"StoreDetails",
+								"62909dc08cbaf363d297e18e"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 27 May 2022 09:52:33 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"62909dc08cbaf363d297e18e\",\n    \"storeName\": \"Zara\",\n    \"phone\": 8797374895,\n    \"email\": \"zara@gmail.com\",\n    \"addresses\": [\n        {\n            \"id\": 1,\n            \"addressLine1\": \"25th Main\",\n            \"addressLine2\": \"Baker Street\",\n            \"state\": \"karnataka\",\n            \"country\": \"India\",\n            \"pinCode\": 833212\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
