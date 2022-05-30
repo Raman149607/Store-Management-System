@@ -36,7 +36,7 @@ public class StoreDetailsController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("StoreDetails Cannot Be added");
 		}
 	}
-	
+
 	@GetMapping("/StoreDetails")
 	public ResponseEntity<List<StoreDetails>> getAllProducts() {
 		try {
@@ -52,7 +52,7 @@ public class StoreDetailsController {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
 	@GetMapping("/StoreDetails/{id}")
 	public ResponseEntity<StoreDetails> getProductById(@PathVariable("id") String id) {
 		Optional<StoreDetails> storeData = storeDetailsService.storeDetailsById(id);
@@ -62,19 +62,18 @@ public class StoreDetailsController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-	
-	@GetMapping("/StoreDetails/pincode/{pinCode}")
-	public ResponseEntity<List<StoreDetails>> getProductByPinCode(@PathVariable("pinCode") int pinCode) {
-		try {
-			List<StoreDetails> storeData = new ArrayList<>();
-			storeDetailsService.storeDetailsByPinCode(pinCode).forEach(storeData::add);
-			if (storeData.isEmpty()) {
-				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-			}
+
+	@GetMapping("/{zipCode}")
+	public ResponseEntity<List<StoreDetails>> getStoreDetailsByZipCode(@PathVariable int zipCode) {
+		
+		List<StoreDetails> storeData = new ArrayList<>();
+		storeDetailsService.storeDetailsByZipCode(zipCode).forEach(storeData::add);
+		if (!storeData.isEmpty()) {
 			return new ResponseEntity<>(storeData, HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+
+		} else {
+
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-
 }

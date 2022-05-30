@@ -155,7 +155,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8989/api/StoreDetails/62909dc08cbaf363d297e18e",
+							"raw": "http://localhost:8989/api/StoreDetails/6294c696cff3457600bbc0b2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -164,7 +164,7 @@
 							"path": [
 								"api",
 								"StoreDetails",
-								"62909dc08cbaf363d297e18e"
+								"6294c696cff3457600bbc0b2"
 							]
 						}
 					},
@@ -182,13 +182,22 @@
 						},
 						{
 							"key": "Date",
-							"value": "Fri, 27 May 2022 09:52:33 GMT"
+							"value": "Mon, 30 May 2022 13:32:27 GMT"
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"id\": \"62909dc08cbaf363d297e18e\",\n    \"storeName\": \"Zara\",\n    \"phone\": 8797374895,\n    \"email\": \"zara@gmail.com\",\n    \"addresses\": [\n        {\n            \"id\": 1,\n            \"addressLine1\": \"25th Main\",\n            \"addressLine2\": \"Baker Street\",\n            \"state\": \"karnataka\",\n            \"country\": \"India\",\n            \"pinCode\": 833212\n        }\n    ]\n}"
+					"body": "{\n    \"id\": \"6294c696cff3457600bbc0b2\",\n    \"storeName\": \"AJIO\",\n    \"phone\": 9587478954,\n    \"email\": \"ajio@gmail.com\",\n    \"addresses\": {\n        \"id\": 2,\n        \"addressLine1\": \"35th Main\",\n        \"addressLine2\": \"Sam Street\",\n        \"state\": \"karnataka\",\n        \"country\": \"India\",\n        \"zipCode\": 833212\n    }\n}"
 				}
 			]
+		},
+		{
+			"name": "GetByPinCode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
 		}
 	]
 }

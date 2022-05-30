@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.storedetails.api.model.Address;
 import com.storedetails.api.model.StoreDetails;
 import com.storedetails.api.repository.StoreDetailsRepository;
 
@@ -30,11 +29,8 @@ public class StoreDetailsService {
 		return detailsRepository.findById(id);
 	}
 
-	public List<Address> storeDetailsByPinCode(int pinCode) {
-		Address address = new Address();
-		address.setPinCode(pinCode);
-		return detailsRepository.findByPinCode(address);
-
+	public List<StoreDetails> storeDetailsByZipCode(int zipCode) {
+		return detailsRepository.findByPinCode(zipCode);
 	}
 
 }
